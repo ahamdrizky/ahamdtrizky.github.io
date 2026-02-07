@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahamd Rizky S.Pd., M.Pd</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: #0d6efd;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    nav {
+      background: #084298;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0d6efd;
+    }
+    ul {
+      line-height: 1.8;
+    }
+    .cta {
+      background: #e7f1ff;
+      padding: 20px;
+      border-left: 5px solid #0d6efd;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #212529;
+      color: #fff;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ahamd Rizky S.Pd., M.Pd</h1>
+    <p>Layanan Pendampingan Akademik & Konsultasi Penulisan Ilmiah</p>
+  </header>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#tentang">Tentang Saya</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <div class="container" id="beranda">
+    <h2>Selamat Datang</h2>
+    <p>
+      Website ini menyediakan layanan pendampingan akademik untuk mahasiswa
+      dan pelajar, khususnya dalam penyusunan skripsi, tesis, dan tugas kuliah.
+      Layanan diberikan secara profesional, rahasia, dan bertanggung jawab.
+    </p>
+  </div>
+
+  <div class="container" id="layanan">
+    <h2>Layanan</h2>
+    <ul>
+      <li>Pendampingan Skripsi (Bab I – Bab V)</li>
+      <li>Pendampingan Tesis & Proposal Penelitian</li>
+      <li>Bantuan Tugas Kuliah & Makalah</li>
+      <li>Parafrase & Penurunan Similaritas</li>
+      <li>Olah Data (SPSS, Excel, dll)</li>
+      <li>Konsultasi Metodologi Penelitian</li>
+    </ul>
+
+    <div class="cta">
+      <strong>Catatan:</strong>
+      <p>
+        Layanan bersifat pendampingan dan edukatif. Kejujuran akademik tetap
+        menjadi tanggung jawab pengguna jasa.
+      </p>
+    </div>
+  </div>
+
+  <div class="container" id="tentang">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya Ahamd Rizky, S.Pd., M.Pd, berpengalaman dalam bidang pendidikan,
+      penelitian, dan penulisan karya ilmiah. Fokus utama saya adalah membantu
+      mahasiswa memahami proses penelitian dan penulisan ilmiah secara benar
+      dan sistematis.
+    </p>
+  </div>
+
+  <div class="container" id="kontak">
+    <h2>Kontak</h2>
+    <p>
+      Untuk konsultasi dan informasi lebih lanjut, silakan hubungi:
+    </p>
+    <ul>
+      <li>WhatsApp: 081247581904</li>
+      <li>Email: ahamdrizky@email.com</li>
+    </ul>
+  </div>
+
+  <div class="container" id="konsultasi">
+    <h2>Konsultasi Cepat via WhatsApp</h2>
+    <p>Isi formulir singkat di bawah ini, pesan Anda akan langsung terkirim ke WhatsApp.</p>
+
+    <form onsubmit="sendWhatsApp(); return false;">
+      <label>Nama</label><br />
+      <input type="text" id="nama" required style="width:100%; padding:10px; margin:8px 0;" />
+
+      <label>Jenis Layanan</label><br />
+      <select id="jenis" onchange="setTemplate()" required style="width:100%; padding:10px; margin:8px 0;">
+        <option value="">-- Pilih Layanan --</option>
+        <option value="skripsi">Pendampingan Skripsi</option>
+        <option value="tesis">Pendampingan Tesis</option>
+        <option value="tugas">Tugas / Makalah</option>
+      </select>
+
+      <label>Pesan</label><br />
+      <textarea id="pesan" required style="width:100%; padding:10px; margin:8px 0;"></textarea>
+
+      <button type="submit" style="background:#0d6efd; color:white; padding:12px 20px; border:none; border-radius:5px; cursor:pointer;">
+        Kirim ke WhatsApp
+      </button>
+    </form>
+  </div>
+
+  <script>
+    function setTemplate() {
+      var jenis = document.getElementById("jenis").value;
+      var pesan = document.getElementById("pesan");
+
+      if (jenis === "skripsi") {
+        pesan.value = "Saya ingin konsultasi pendampingan skripsi.
+Judul sementara: 
+Universitas/Jurusan: 
+Kendala: ";
+      } else if (jenis === "tesis") {
+        pesan.value = "Saya ingin konsultasi pendampingan tesis.
+Judul sementara: 
+Program Studi: 
+Kendala: ";
+      } else if (jenis === "tugas") {
+        pesan.value = "Saya ingin konsultasi bantuan tugas/makalah.
+Mata kuliah: 
+Deadline: ";
+      }
+    }
+
+    function sendWhatsApp() {
+      var nama = document.getElementById("nama").value;
+      var jenis = document.getElementById("jenis").value;
+      var pesan = document.getElementById("pesan").value;
+
+      var nomor = "6281247581904";
+      var text = `Halo, saya ${nama}.
+Jenis layanan: ${jenis}.
+${pesan}`;
+      var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    }.
+Kebutuhan: ${kebutuhan}.
+Pesan: ${pesan}`;
+      var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    }
+  </script>
+
+  <a href="https://wa.me/6281247581904" target="_blank" style="position:fixed; bottom:20px; right:20px; background:#25d366; color:white; padding:15px 18px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 4px 8px rgba(0,0,0,0.3); z-index:999;">💬 WhatsApp</a>
+
+  <footer>
+    &copy; 2026 Ahamd Rizky S.Pd., M.Pd | All Rights Reserved
+  </footer>
+
+</body>
+</html>
